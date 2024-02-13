@@ -1,51 +1,6 @@
-# -*- coding: utf-8 -*-
-
-import graphviz as gv
-
-def consecutif(word_1: str, word_2: str) -> bool:
-    """
-        check if two word have only one letter apart from each other
-        Parameters:
-        -----
-            word_1: (str) the first word
-            word_2: (str) the second word
-        Return:
-        -----
-        (bool): True if thee is only one different letter from the first word to the second
-    """
-    word_1 = sorted(word_1)
-    word_2 = sorted(word_2)
-    for first_turn in range(len(word_1)):
-        for second_turn in range(len(word_2)):
-            if word_2[second_turn] == word_1[first_turn]:
-                word_2.pop(second_turn)
-                break
-    if len(word_2) == 1:
-        return True
-    return False
-
-
-def solve(beginning: str, to: str, list_of_words: list) -> list:
-    """
-    find a sequence of words that will take you from one word to the next
-    Parameters:
-        beginning (str): the first word
-        to (str): the final word
-        list_of_words (list): the list of word
-
-    Returns:
-        list: the path
-    """
-    graph = gv.Graph()
-    added = []
-    for element in list_of_words:
-        graph.node(element, element)
-        added.append(element)
-        for element_2 in added:
-            if consecutif(element,element_2) and element_2 != element:
-                graph.edge(element_2, element)
-    
-
+from Node import *
+from Graph import *
+from ParcoursGraphes import *
 
 dico = ["aime", "auge", "baie", "brie", "bris", "bure", "cage", "cale", "came", "cape",
 "cime", "cire", "cris", "cure", "dame", "dime", "dire", "ducs", "dues", "duos",
@@ -59,4 +14,8 @@ dico = ["aime", "auge", "baie", "brie", "bris", "bure", "cage", "cale", "came", 
 "saie", "sale", "sape", "sari", "scie", "sure", "taie", "tale", "tape", "tare",
 "tari", "tige", "toge", "tore", "tors", "tort", "trie", "tris", "troc", "truc"]
 
-print(solve("ours", "cage", dico))
+Graph = graph()
+for value in dico :
+    Graph.add_a_node(node(value))
+print(Graph)
+print(cherche_chemin(Graph.adjacency_list,"lire","paie"))
