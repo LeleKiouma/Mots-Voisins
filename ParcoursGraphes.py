@@ -1,4 +1,3 @@
-
 #author : Hugues Malherbe
 
 import math

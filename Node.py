@@ -1,4 +1,4 @@
-class node :
+class Node :
     def __init__(self,value:str) -> None:
         """
         create the node

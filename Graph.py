@@ -1,5 +1,5 @@
-from Node import *
-class graph:
+from node import *
+class Graph:
     def __init__(self) -> None :
         """
         create the graph

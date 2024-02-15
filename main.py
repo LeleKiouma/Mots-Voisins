@@ -1,6 +1,8 @@
-from Node import *
-from Graph import *
+from node import *
+from graph import *
 from ParcoursGraphes import *
+
+
 
 dico = ["aime", "auge", "baie", "brie", "bris", "bure", "cage", "cale", "came", "cape",
 "cime", "cire", "cris", "cure", "dame", "dime", "dire", "ducs", "dues", "duos",
@@ -14,8 +16,11 @@ dico = ["aime", "auge", "baie", "brie", "bris", "bure", "cage", "cale", "came", 
 "saie", "sale", "sape", "sari", "scie", "sure", "taie", "tale", "tape", "tare",
 "tari", "tige", "toge", "tore", "tors", "tort", "trie", "tris", "troc", "truc"]
 
-Graph = graph()
+Graph = Graph()
 for value in dico :
-    Graph.add_a_node(node(value))
+    Graph.add_a_node(Node(value))
 print(Graph)
+
 print(cherche_chemin(Graph.adjacency_list,"lire","paie"))
+
+print(dijkstra(Graph.adjacency_list,"lire","paie")) # on vois bien que djikstra est bien plus rapide sa mère la p***
