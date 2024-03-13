@@ -23,4 +23,4 @@ print(Graph)
 
 print(cherche_chemin(Graph.adjacency_list,"lire","paie"))
 
-print(dijkstra(Graph.adjacency_list,"lire","paie")) # on vois bien que djikstra est bien plus rapide sa mère la p***
+print(dijkstra(Graph.adjacency_list,"lire","paie"))   #the most optimized algorithm with A*

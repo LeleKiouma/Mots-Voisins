@@ -21,7 +21,7 @@ class Node :
         """
         print the node in a good way
         """
-        print("\tLa valeur du noeu est "+ self.value+", ces voisin sont :",end = "\n\t\t")
+        print("\tLa valeur du noeu est "+ self.value+", ces voisins sont :",end = "\n\t\t")
         for neighbor in self.neighbor:
             print(neighbor.value,end = ' , ')
         return " "
